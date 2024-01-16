@@ -1,13 +1,10 @@
 from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAI
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain_community.document_loaders.parsers.pdf import PyPDFParser
 from langchain_community.document_loaders.parsers.msword import MsWordParser
-from langchain_core.vectorstores import VectorStoreRetriever
 import streamlit as st
-from langchain_community.embeddings.sentence_transformer import (
-    SentenceTransformerEmbeddings,
-)
+
 import tempfile
 
 PDF: str = "application/pdf"
@@ -16,7 +13,10 @@ DOCX: str = "application/vnd.openxmlformats-officedocument.wordprocessingml.docu
 # Setup the DB
 vectordb = Chroma(
     persist_directory="./chroma_db",
-    embedding_function=SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2"),
+    embedding_function=OpenAIEmbeddings(
+        api_key="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",
+        openai_api_type="davinci",
+    ),
 )
 
 
@@ -48,7 +48,7 @@ if files:
                 vectordb.add_documents(documents=MsWordParser(temp_file_path))
 
     qa = RetrievalQA.from_llm(
-        llm=OpenAI(api_key="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"),
+        llm=ChatOpenAI(api_key="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"),
         retriever=vectordb.as_retriever(),
     )
 

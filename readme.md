@@ -15,8 +15,6 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-2. https://medium.com/@onkarmishra/using-langchain-for-question-answering-on-own-data-3af0a82789ed
-
 ## Architecture Diagram 
 > Credits: Greg Kamradt from [fullstackretrieval](https://fullstackretrieval.com/)
 
@@ -57,3 +55,9 @@ When getting documents from the vectorstore that relate to a certain query, ther
 Given the nature of RFPs, I will be choosing to use MMR (It's just an option that you can choose from in the `.as_retriever()` method) as it performs better on more complex queries.
 
 [Langchain Docs for Selecting Documents with MMR](https://python.langchain.com/docs/modules/model_io/prompts/example_selector_types/mmr)
+
+## Useful Links:
+
+ - [Langchain Documentation for Unstructured](https://python.langchain.com/docs/integrations/document_loaders/unstructured_file)
+ - [Langchain Documentation for UnstructuredAPIIOFileLoader](https://api.python.langchain.com/en/stable/document_loaders/langchain_community.document_loaders.unstructured.UnstructuredAPIFileIOLoader.html#langchain_community.document_loaders.unstructured.UnstructuredAPIFileIOLoader)
+ - [Link on RAG](https://medium.com/@onkarmishra/using-langchain-for-question-answering-on-own-data-3af0a82789ed)

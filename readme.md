@@ -61,3 +61,5 @@ Given the nature of RFPs, I will be choosing to use MMR (It's just an option tha
  - [Langchain Documentation for Unstructured](https://python.langchain.com/docs/integrations/document_loaders/unstructured_file)
  - [Langchain Documentation for UnstructuredAPIIOFileLoader](https://api.python.langchain.com/en/stable/document_loaders/langchain_community.document_loaders.unstructured.UnstructuredAPIFileIOLoader.html#langchain_community.document_loaders.unstructured.UnstructuredAPIFileIOLoader)
  - [Link on RAG](https://medium.com/@onkarmishra/using-langchain-for-question-answering-on-own-data-3af0a82789ed)
+ - [Deploy a streamlit app](https://ploomber.io/blog/streamlit_exe/)
+ 
